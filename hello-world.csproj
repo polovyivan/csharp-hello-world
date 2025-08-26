@@ -25,6 +25,10 @@
   <ItemGroup>
     <PackageReference Include="NLog" Version="5.0.2" />
   </ItemGroup>
+    <ItemGroup>
+      <!-- Vulnerable package for testing -->
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
 
   <!-- copy file ./data/NLog.config to target directory -->
   <!---
