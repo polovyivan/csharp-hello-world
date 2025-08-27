@@ -1,0 +1,1 @@
+^RH/home/ivan/projects/private/csharp/csharp-hello-world/hello-world.csproj¢net6.0òCSharp10

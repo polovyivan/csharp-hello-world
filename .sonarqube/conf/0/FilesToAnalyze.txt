@@ -1,0 +1,4 @@
+﻿/home/ivan/projects/private/csharp/csharp-hello-world/lib/Class1.cs
+/home/ivan/projects/private/csharp/csharp-hello-world/lib/DataList.cs
+/home/ivan/projects/private/csharp/csharp-hello-world/lib/MyMath.cs
+/home/ivan/projects/private/csharp/csharp-hello-world/lib/Pair.cs

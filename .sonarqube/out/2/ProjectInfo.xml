@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>hello-world</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>5439d0dd-e3a5-4822-851e-14b058c81afc</ProjectGuid>
+  <FullPath>/home/ivan/projects/private/csharp/csharp-hello-world/hello-world.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="/home/ivan/projects/private/csharp/csharp-hello-world/.sonarqube/conf/2/FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">/home/ivan/projects/private/csharp/csharp-hello-world/.sonarqube/out/2/Issues.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">/home/ivan/projects/private/csharp/csharp-hello-world/.sonarqube/out/2</Property>
+    <Property Name="sonar.cs.scanner.telemetry">/home/ivan/projects/private/csharp/csharp-hello-world/.sonarqube/out/2/Telemetry.json</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+  <TargetFramework>net6.0</TargetFramework>
+</ProjectInfo>
