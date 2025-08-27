@@ -1,1 +1,0 @@
-bRL/home/ivan/projects/private/csharp/csharp-hello-world/test/unit-tests.csproj¢net6.0òCSharp10
