@@ -1,0 +1,65 @@
+<Project DefaultTargets="Build;CopyFiles" Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>hello_world</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <!-- set EnableDefaultCompileItems to false -->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  
+  <!-- copy file ./data/NLog.config to $(OutDir)/NLog.config -->
+  <Target Name="CopyFiles">
+    <Copy SourceFiles="./data/NLog.config" DestinationFolder="$(OutDir)" />
+  </Target>
+  
+  <!-- specify the source files to be used for this project -->
+  <ItemGroup>
+    <Compile Include="src/*.cs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="lib\library.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="5.0.2" />
+    
+    <!-- VULNERABLE DEPENDENCIES - FOR TESTING DEPENDENCY TRACK -->
+    <!-- Newtonsoft.Json 12.0.1 has multiple vulnerabilities including CVE-2022-23517 -->
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    
+    <!-- log4net 2.0.8 has CVE-2018-1285 - XML External Entity vulnerability -->
+    <PackageReference Include="log4net" Version="2.0.8" />
+    
+    <!-- System.Text.Encodings.Web 4.7.0 has CVE-2021-26701 - Remote Code Execution -->
+    <PackageReference Include="System.Text.Encodings.Web" Version="4.7.0" />
+    
+    <!-- System.Net.Http 4.3.0 has multiple vulnerabilities -->
+    <PackageReference Include="System.Net.Http" Version="4.3.0" />
+    
+    <!-- System.Drawing.Common 4.5.0 has CVE-2021-24112 -->
+    <PackageReference Include="System.Drawing.Common" Version="4.5.0" />
+    
+    <!-- Microsoft.AspNetCore.Http 2.2.0 has vulnerabilities -->
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.0" />
+  </ItemGroup>
+  
+  <!-- copy file ./data/NLog.config to target directory -->
+  <!---
+    This creates a directory ./data/ with file NLog.conf in the $(OutDir).
+    But we want ./data/NLog.config to be copied to $(OutDir)/NLog.config
+    instead of $(OutDir)/data/NLog.config.
+    So, we define a target named CopyFiles and add it tot the project's
+    DefaultTargets.
+    <ItemGroup>
+      <None Update="./data/NLog.config" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+  -->
+  
+  <!-- create a single binary file that contains all we need to run the app -->
+  <PropertyGroup>
+    <PublishSingleFile>true</PublishSingleFile>
+  </PropertyGroup>
+</Project>
